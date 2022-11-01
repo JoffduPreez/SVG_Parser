@@ -1,0 +1,237 @@
+/* html {
+    width: 60%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+body {
+    height: 100%;
+    min-height: 100%;
+    line-height: 1.75;
+    background-color: #FFFFFF;
+}
+a:link:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+} */
+
+/*********** My Styles: ************/
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+    /* scroll-behavior: smooth; */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    padding: 10vh 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f4f4;
+}
+
+.mainTitle {
+    color: #4B4B8B;
+    margin-bottom: 10px;
+}
+
+.mainPannel {
+    border-bottom: 10px #7DCD85 solid;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5vh;
+    margin-bottom: 5vh;
+}
+
+.expandMainPannel {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4B4B8B;
+    margin-bottom: 3vh;
+}
+
+.expandPannelBtn {
+    color: #7DCD85;
+    cursor: pointer;
+}
+
+.tableFormat {
+    word-wrap: normal;
+}
+
+.tableFormat th {
+    padding: 10px 15px;
+    border: 1px solid #b0b0b0;
+    text-align: center;
+}
+
+.tableFormat td {
+    padding: 10px 15px;
+    border: 1px solid #b0b0b0;
+    text-align: center;
+}
+
+.tableFormat {
+    margin-bottom: 0px;
+}
+
+#svgTableUpper td {
+    border-bottom: none;
+}
+
+#SvgViewPannelImg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* border: 1px solid #b0b0b0; */
+    /* height: 400px; */
+    /* margin-bottom: 20px; */
+}
+
+#SvgViewPannelImg img {
+    width: 800px;
+}
+
+#uploadForm {
+    align-self: baseline;
+    margin-top: 2vh;
+}
+
+#uploadForm input {
+    width: 100%;
+    cursor: pointer;
+}
+
+#uploadForm button {
+    padding: 4px 10px;
+    margin-top: 5px;
+    border: 2px solid #4b4b8b;
+    border-radius: 50px;
+    background: #f4f4f4;
+    cursor: pointer;
+    transition-property: background-color color;
+    transition-duration: 0.5s;
+}
+
+#uploadForm button:hover {
+    background-color: #4b4b8b;
+    color: white;
+}
+
+.SVGList {
+    margin-bottom: 2vh;
+}
+
+#listTitle {
+    color: #4B4B8B;
+}
+
+.smallBtn {
+    padding: 4px 10px;
+    border: 2px solid #4b4b8b;
+    border-radius: 50px;
+    background: #f4f4f4;
+    cursor: pointer;
+    transition-property: background-color color;
+    transition-duration: 0.5s;
+    margin: auto;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.smallBtn:hover {
+    background-color: #4b4b8b;
+    color: white;
+}
+
+.editText {
+    width: 100%;
+    padding: 10px;
+}
+
+.editTextSmall {
+    width: 100%;
+    padding: 5px;
+}
+
+h1, h2, h3 {
+    color: #4B4B8B;
+}
+
+#componentAttributes {
+    width: 100%;
+    text-align: center;
+}
+
+#componentAttributes h3 {
+    margin-top: 3vh;
+}
+
+#newAttrForm {
+    margin-top: 10px;
+}
+
+#addComponentContainer {
+    margin-bottom: 10px;
+}
+
+#addComponentType {
+    color: #4B4B8B;
+}
+
+#scaleShape {
+    width: 50%;
+}
+
+#scaleShapesTitle {
+    margin-top: 2vh;
+}
+
+.additFuncTitle {
+    margin-top: 2vh;
+}
+
+.fileLogImage {
+    padding: 5px 0 !important;
+}
+
+.fileLogImage img {
+    width: 200px;
+}

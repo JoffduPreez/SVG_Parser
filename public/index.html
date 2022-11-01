@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Joffre's SVG Parser</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- Custom CSS End -->
+    <link rel="shortcut icon" href="#" />
+</head>
+<body>
+    <div id="fileLogPannel" class="mainPannel">
+        <h1 class="mainTitle">File Log Pannel</h1>
+
+        <table class="table tableFormat" id="fileLogTable">
+            <!-- <tr>
+                <th>Image (click to download)</th>
+                <th>File name (click to download)</th>
+                <th>File size</th>
+                <th>Number of Rectangles</th>
+                <th>Number of Circles</th>
+                <th>Number of Paths</th>
+                <th>Number of Groups</th>
+            </tr>
+            <tr>
+                <td class="fileLogImage"><img src="../uploads/Emoji_poo.svg" alt="Emoji_poo.svg"></td>
+                <td><a href="">quad01.svg</a></td>
+                <td>1kb</td>
+                <td>1</td>
+                <td>5</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td class="fileLogImage">Image Goes here</td>
+                <td><a href="">beer.svg</a></td>
+                <td>3kb</td>
+                <td>3</td>
+                <td>8</td>
+                <td>1</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td class="fileLogImage">Image Goes here</td>
+                <td><a href="">quad01.svg</a></td>
+                <td>2kb</td>
+                <td>2</td>
+                <td>9</td>
+                <td>6</td>
+                <td>5</td>
+            </tr> -->
+        </table>
+
+        <form ref='uploadForm'
+		id='uploadForm'
+      action='/upload'
+      method='post'
+      encType="multipart/form-data">
+            <input type="file" id="myFile" name="uploadFile">
+            <button type="submit" id="uploadFormSubmit">Submit</button>
+        </form>
+    </div>
+
+
+
+    <div id="SvgViewPannel" class="mainPannel">
+        <h1 class="mainTitle">SVG View Pannel</h1>
+
+        <h4 id="listTitle">Choose an SVG to View:</h4>
+        <select name="SVGList" class="SVGList" style="margin: 0;"></select>
+        <div class="smallBtn" id="chooseSVGBtn">Select</div>
+
+        <div id="SvgViewPannelImg"></div>
+    </div>
+
+
+    
+    <div id="additionalFunctionality" class="mainPannel">
+        <h1 class="mainTitle">Additional Functionality</h1>
+
+        <h3>Create New SVG</h3>
+        <table class="table tableFormat" id="createSVG">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>File Name</th>
+            </tr>
+            <tr>
+                <td><textarea class="editText"></textarea></td>
+                <td><textarea class="editText"></textarea></td>
+                <td><textarea class="editText"></textarea></td>
+            </tr>
+        </table>
+        <div id="createSVGContainer">
+            <div class="smallBtn" id="saveCreateSVG">Save</div>
+        </div>
+
+        <h3 class="additFuncTitle">Add shape to SVG</h3>
+        <h4 id="listTitle">Choose an SVG:</h4>
+        <select name="SVGList" class="SVGList" style="margin-bottom: 5px;"></select>
+        <div id="addComponentTypeContainer">
+            <div class="smallBtn" id="addRect">Add Rectangle</div>
+            <div class="smallBtn" id="addCirc">Add Circle</div>
+        </div>
+
+
+        <h3 id="scaleShapesTitle" class="additFuncTitle">Scale Shapes</h3>
+        <h4 id="listTitle">Choose an SVG:</h4>
+        <select name="SVGList" class="SVGList" style="margin-bottom: 10px;"></select>
+        <table class="table tableFormat" id="scaleShape">
+            <tr>
+                <th>Shape Type</th>
+                <th>Scale Factor</th>
+            </tr>
+            <tr>
+                <td>
+                    <select name="shapeType" id="shapeType">
+                        <option value="Rectangle">Rectangle</option>
+                        <option value="Circle">Circle</option>
+                    </select>
+                </td>
+                <td><input type="number" class="editTextSmall"></td>
+            </tr>
+        </table>
+        <div id="scaleSVGContainer">
+            <div class="smallBtn" id="saveScaleSVG">Save</div>
+        </div>
+    </div>
+
+    <!-- Leave me at the bottom of body -->
+    <script src="index.js"></script>
+</body>
+</html>
+
+
+
+
+
+        <!-- <table class="table tableFormat" id="svgTableUpper">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td id="titleSection">
+                    <textarea class="editText">Example quad01 - quadratic Bézier commands in path data</textarea>
+                    <br>
+                    <div class="smallBtn" id="titleCancelEdit">Cancel</div>
+                    <div class="smallBtn" id="titleSaveEdit">Save</div>
+                </td>
+                <td id="descriptionSection">
+                    <textarea class="editText">Picture showing a "Q" a "T" command, along with annotations showing the control points and end points</textarea>
+                    <br>
+                    <div class="smallBtn" id="descCancelEdit">Cancel</div>
+                    <div class="smallBtn" id="descSaveEdit">Save</div>
+                </td>
+            </tr>
+        </table> -->
+
+            <!-- <div id="addAttributeContainer">
+                <div class="smallBtn" id="addAttribute">Add Attribute</div>
+            </div>
+
+            <div id="addAttributeContainer">
+                <div class="smallBtn" id="cancelAddAttribute">Cancel</div>
+                <div class="smallBtn" id="saveAddAttribute">Save</div>
+            </div>
+
+            <table class="table tableFormat" id="newAttrForm">
+                <tr>
+                    <th>New Attribute Title</th>
+                    <th>New Attribute Value</th>
+                </tr>
+                <tr class="attrData">
+                    <td><textarea></textarea></td>
+                    <td><textarea></textarea></td>
+                </tr>
+            </table> -->
+
+        <!-- <div id="componentAttributes">
+            <h3>Component Name - Attributes</h3>
+            <table class="table tableFormat" id="componentAttributesTable">
+                <tr>
+                    <th>Attribute Title</th>
+                    <th>Attribute Value</th>
+                </tr>
+                <tr class="attrData">
+                    <td>Attribute Name</td>
+                    <td>Attribute Value<br>
+                        <div class="smallBtn attrValueEditBtn">Edit Value</div>
+                    </td>
+                </tr>
+                <tr class="attrData">
+                    <td>Attribute Name</td>
+                    <td>Attribute Value<br>
+                        <div class="smallBtn attrValueEditBtn">Edit Value</div>
+                    </td>
+                </tr>
+                <tr class="attrData">
+                    <td>Attribute Name</td>
+                    <td>Attribute Value<br>
+                        <div class="smallBtn attrValueEditBtn">Edit Value</div>
+                    </td>
+                </tr>
+                <tr class="attrData">
+                    <td>Attribute Name</td>
+                    <td>Attribute Value<br>
+                        <div class="smallBtn attrValueEditBtn">Edit Value</div>
+                    </td>
+                </tr>
+            </table>
+        </div> -->
+
+
+
+
+        <!-- <table class="table tableFormat" id="svgTableUpper">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td id="titleSection">Title<br><div class="smallBtn" id="titleEditBtn">Edit Title</div></td>
+                <td id="descriptionSection">Description<br><div class="smallBtn" id="descEditBtn">Edit Description<div></td>
+            </tr>
+        </table> -->
+        
+        <!-- <table class="table tableFormat" id="svgTableLower">
+            <tr>
+                <th>Component</th>
+                <th>Summary</th>
+                <th>Other Attributes</th>
+            </tr>
+            <tr class="SVGComponent">
+                <td>Path 1</td>
+                <td>path data = M200,300 L400,50 L600,300 L800,550 L1000,300</td>
+                <td>
+                    3<br>
+                    <div class="smallBtn showAttrBtn">Show Attributes</div>
+                </td>
+            </tr>
+            <tr class="SVGComponent">
+                <td>Group 1</td>
+                <td>2 child elements</td>
+                <td>
+                    1<br>
+                    <div class="smallBtn showAttrBtn">Show Attributes</div>
+                </td>
+            </tr>
+            <tr class="SVGComponent">
+                <td>Group 2</td>
+                <td>3 child elements</td>
+                <td>
+                    1<br>
+                    <div class="smallBtn showAttrBtn">Show Attributes</div>
+                </td>
+            </tr>
+            <tr class="SVGComponent">
+                <td>Group 3</td>
+                <td>2 child elements</td>
+                <td>
+                    1<br>
+                    <div class="smallBtn showAttrBtn">Show Attributes</div>
+                </td>
+            </tr>
+        </table> -->
