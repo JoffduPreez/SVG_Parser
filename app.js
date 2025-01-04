@@ -86,7 +86,10 @@ app.get('/uploads/:name', function(req , res){
 
 //******************** Your code goes here ******************** 
 
-let sharedLib = ffi.Library('libsvgparser', {
+// Resolve the full path to the dynamic library
+const libPath = path.resolve(__dirname, 'parser/libsvgparser.dylib');
+
+let sharedLib = ffi.Library(libPath, {
   'fileSVGtoJSON': ['string', ['string', 'string']],
   'svgViewPannel': ['string', ['string']],
   'getOtherAttributes': ['string', ['string', 'string', 'int']],
